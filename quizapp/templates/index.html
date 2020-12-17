@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz App</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+        
+        
+    </head>
+    <body>
+        <div class="quiz-container" id="quiz">
+            {% for i in Quiz %}
+            <div class="quiz-header">
+                <h2 id="question">{{i.id}}) {{i.Question}}?</h2>
+                
+                <ul>
+                    <li>
+                        <input type="radio" id="Option1"  name="{{i.id}}" value="{{i.Option1}}" class="answer"/>{{i.Option1}}
+                    </li>
+                    <li>
+                        <input type="radio" id="Option2"  name="{{i.id}}" value="{{i.Option2}}" class="answer">{{i.Option2}}
+                    </li>
+                    <li>
+                        <input type="radio" id="Option3"  name="{{i.id}}" value="{{i.Option3}}" class="answer">{{i.Option3}}
+                    </li>
+                    <li>
+                        <input type="radio" id="Option4"  name="{{i.id}}" value="{{i.Option4}}" class="answer">{{i.Option4}}
+                    </li>
+                </ul>
+                <label id="corrans">{{i.Corrans}}</label>
+            </div>
+            {% endfor %}
+            <button>Submit</button>
+        </div>
+        
+        
+        <!--<div class="quiz-container" id="quiz">
+            {% for i in Quiz %}
+            <div class="quiz-header" style="font-family: sans-serif; font-size: 20px"> 
+                <table>
+                    <tr>
+                        <td id="question">{{i.id}} ) {{i.Question}} ?</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="Option1"  name="{{i.id}}" value="{{i.Option1}}" class="answer">{{i.Option1}}</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="Option2"  name="{{i.id}}" value="{{i.Option2}}" class="answer">{{i.Option2}}</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="Option3"  name="{{i.id}}" value="{{i.Option3}}" class="answer">{{i.Option3}}</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="Option4"  name="{{i.id}}" value="{{i.Option4}}" class="answer">{{i.Option4}}</td>
+                    </tr>
+                    <tr>
+                        <td><label id="corrans">{{i.Corrans}}</label></td>
+                    </tr>
+                </table>
+            </div>
+            {% endfor %}
+            <input type="submit" value="result" id="button"/>
+        </div>
+        <div></div>-->
+        
+    </body>
+    
+    <script type="text/javascript">
+        const parent = document.getElementById("quiz");
+        const child = parent.querySelectorAll('*');
+        
+        //function
+        
+        var items = [];
+        
+        for(var i = 0; i < child.length; i++)
+            {
+                items[i] = ;
+            }
+        
+        console.log(child);
+            
+        
+        
+    </script>
+    
+</html>
